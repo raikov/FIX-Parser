@@ -5,7 +5,7 @@
 FIX() is a liteweight library for parsing and manipulating FIX protocol based messages.
 --------------
 
-*Basic Usage:*
+**Basic Usage:**
 
 
     <script type="text/javascript" src="fix.js"></script>
@@ -20,16 +20,17 @@ FIX() is a liteweight library for parsing and manipulating FIX protocol based me
     </script>
 
 FIX functions creates an instance with the specified configuration.
-Parameters:JSON
+Parameters:Object Literal
 
-version: String - FIX protocol version - Default: '4.4'
-delimitter: String - Message delimetter - Default: '\x01'
-Methods:
+    version: //String - FIX protocol version - Default: '4.4'
+    delimitter: //String - Message delimetter - Default: '\x01'
 
-.translateToJSON(FIXstring) - Translates a FIX string to Object Literal
+**Methods:**
+
+	.translateToJSON(FIXstring) - //Translates a FIX string to Object Literal
 (e.g. - 44=1.234 becomes { Price:1.234 } )
 
-.translateJSONToFIX(JSONobject) - Opposite to translateToJSON method. Converts translated Object to fix message
+	.translateJSONToFIX(JSONobject) - Opposite to translateToJSON method. Converts translated Object to fix message
 (e.g. - { Price:1.234 } becomes 44=1.234 ).
 
     .toJSON(FIXstring) - Converts Fix string to Object Literal.
@@ -42,30 +43,30 @@ Methods:
 
     .JSONtoFIX(JSONobject) - Converts Object Literal to Fix string
 
-*Examples:*
+**Examples:**
 
 
     var msg = MyFix.parse('28=N|55=SPMI.MI|54=2|27=200000');
     // returns a Object Literal;
 
-var js = MyFix.translateToJSON('28=N|55=SPMI.MI|54=2|27=200000');
+    var js = MyFix.translateToJSON('28=N|55=SPMI.MI|54=2|27=200000');
 
 
-*Create New Methods:*
+**Create New Methods:**
 
 
 
     FIX.add.MyNewMethod = function(){
 
     }
+	//usage:
+	MyFix.MyNewMethod();
 
-MyFix.MyNewMethod();
 
-
-*Versions:*
+**Versions:**
 
 Currently versions 4.1, 4.4, 5.0 are added FIX Specifications
 
-*Compatibility:*
+**Compatibility:**
 
 FIX is supported by all major browsers and Node.js

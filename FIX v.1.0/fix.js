@@ -70,6 +70,7 @@
         version:{}
     }
     var config = FIX.add.config = function(options){
+            var options = options || {};
             this.options = options;
             this.options.delimitter = this.options.delimitter || new String('\x01');
             this.options.version = this.options.version || '4.4';
